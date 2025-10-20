@@ -78,7 +78,7 @@ const GuestOnlyRoute = ({ children }) => {
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* Public Routes - Không cần đăng nhập */}
+      {/* Public Routes */}
       <Route path="/" element={
         <GuestOnlyRoute>
           <Welcome />
@@ -97,7 +97,7 @@ const AppRoutes = () => {
         </GuestOnlyRoute>
       } />
 
-      {/* Onboarding Routes - Cần đăng nhập, chưa có ví */}
+      {/* Onboarding Routes */}
       <Route path="/onboarding">
         <Route path="create" element={
           <ProtectedRoute>
@@ -124,7 +124,7 @@ const AppRoutes = () => {
         } />
       </Route>
 
-      {/* Main App Routes - Cần đăng nhập VÀ có ví */}
+      {/* Main App Routes */}
       <Route path="/" element={
         <WalletRequiredRoute>
           <Layout />
@@ -137,13 +137,13 @@ const AppRoutes = () => {
         <Route path="settings" element={<Settings />} />
       </Route>
 
-      {/* 404 Not Found */}
+      {/* 404 */}
       <Route path="*" element={
         <div className="min-h-screen flex items-center justify-center bg-gray-950">
           <div className="text-center">
             <h1 className="text-6xl font-bold text-primary-500 mb-4">404</h1>
             <p className="text-xl text-gray-400 mb-8">Trang không tồn tại</p>
-            <a href="/" className="btn btn-primary">
+            <a href="/" className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors">
               Về trang chủ
             </a>
           </div>
